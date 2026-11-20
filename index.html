@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#160d29">
+<title>ANIMEVERSE MEGABIEB</title>
+<style>
+:root{
+--bg:#10091c;--panel:#211432;--panel2:#302044;
+--pink:#ff78ce;--purple:#ad86ff;--blue:#80d5ff;
+--muted:#c1b1d2;--border:#443054;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#170d29f5;backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+.nav{max-width:1450px;margin:auto;padding:15px 4%;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:23px;font-weight:900;color:var(--pink)}
+.logo small{display:block;font-size:10px;letter-spacing:4px;color:white;margin-top:4px}
+nav{display:flex;gap:17px}
+nav a{color:white;text-decoration:none;font-size:13px}
+.lang,.secondary{background:var(--panel);border:1px solid var(--border);color:white;border-radius:10px;padding:11px}
+main{max-width:1450px;margin:auto;padding:25px 4%}
+.hero{min-height:360px;padding:35px;border-radius:24px;border:1px solid var(--border);background:linear-gradient(90deg,#160b2af5,#160b2a99),url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1500") center/cover;display:flex;align-items:center}
+.hero h1{font-size:clamp(40px,7vw,75px);margin:12px 0}
+.hero h2{letter-spacing:7px;color:var(--pink)}
+.hero p{max-width:550px;color:#e0d2ee;line-height:1.7}
+.primary{border:0;border-radius:11px;padding:13px 20px;background:linear-gradient(110deg,var(--pink),var(--purple));font-weight:bold;color:#170c26}
+.section{margin-top:45px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+h2{font-size:23px;margin:0}
+.sub{font-size:12px;color:var(--muted);margin-top:7px}
+.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin:18px 0}
+input,select{width:100%;padding:13px;background:var(--panel);color:white;border:1px solid var(--border);border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:16px}
+.card{overflow:hidden;border:1px solid var(--border);border-radius:14px;background:var(--panel);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--pink)}
+.poster{height:240px;position:relative;background:var(--panel2)}
+.poster img{width:100%;height:100%;object-fit:cover}
+.poster .missing{height:100%;display:grid;place-items:center;padding:15px;text-align:center;color:var(--pink);font-weight:bold}
+.info{padding:12px}
+.info h3{font-size:14px;margin:0 0 8px}
+.info p{font-size:11px;color:var(--muted);line-height:1.5}
+.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.card-actions a,.card-actions button{padding:9px 4px;border-radius:8px;text-align:center;text-decoration:none;background:var(--panel2);border:1px solid var(--border);color:white;font-size:11px}
+.card-actions a.watch{background:#57305c;border-color:var(--pink)}
+.card-actions button{grid-column:1/-1}
+.notice{background:#251936;border:1px solid var(--border);padding:14px;border-radius:12px;color:var(--muted);font-size:12px;line-height:1.7}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.service{background:var(--panel);border:1px solid var(--border);padding:20px;border-radius:15px}
+.service h3{color:var(--pink)}
+.service p{font-size:13px;color:var(--muted);line-height:1.6}
+.service a{color:var(--blue)}
+.status{font-size:12px;color:var(--muted);margin:12px 0}
+footer{text-align:center;margin-top:60px;padding:35px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+@media(max-width:700px){
+nav{display:none}.hero{padding:23px;min-height:320px}
+.toolbar{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.poster{height:190px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">✦ ANIMEVERSE<small>MEGABIEB</small></div>
+<nav>
+<a href="#home">HOME</a>
+<a href="#library">ANIME</a>
+<a href="#streaming">STREAMING</a>
+<a href="#favorites">FAVORIETEN</a>
+</nav>
+<button class="lang" id="lang">🇬🇧 EN</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div>
+<div style="color:var(--pink);letter-spacing:4px">WELCOME TO YOUR ANIME UNIVERSE</div>
+<h1>ANIMEVERSE</h1>
+<h2>MEGABIEB</h2>
+<p data-nl="Ontdek duizenden animefilms en series. Verken personages, genres en jouw volgende favoriete anime!" data-en="Discover thousands of anime movies and series. Explore characters, genres and your next favorite anime!">Ontdek duizenden animefilms en series. Verken personages, genres en jouw volgende favoriete anime!</p>
+<button class="primary" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">EXPLORE ANIME →</button>
+</div>
+</section>
+
+<section class="section" id="library">
+<div class="section-head">
+<div>
+<h2>🌸 ANIME MEGABIEB</h2>
+<div class="sub" id="count">Anime ontdekken...</div>
+</div>
+</div>
+
+<div class="toolbar">
+<input id="search" placeholder="🔎 Zoek anime...">
+<select id="type">
+<option value="">Alle soorten</option>
+<option value="tv">Series</option>
+<option value="movie">Films</option>
+<option value="ova">OVA</option>
+<option value="ona">ONA</option>
+</select>
+<select id="order">
+<option value="bypopularity">Populair</option>
+<option value="score">Hoogst beoordeeld</option>
+<option value="start_date">Nieuwste</option>
+</select>
+</div>
+
+<div class="status" id="status">Animecatalogus wordt geladen...</div>
+<div class="grid" id="grid"></div>
+<div style="text-align:center;margin-top:25px">
+<button class="primary" id="more">MEER ANIME LADEN ↓</button>
+</div>
+</section>
+
+<section class="section" id="favorites">
+<h2>⭐ MIJN FAVORIETEN</h2>
+<div class="sub">Bewaard op jouw eigen apparaat, zonder account.</div>
+<div class="grid" id="favgrid" style="margin-top:18px"></div>
+</section>
+
+<section class="section" id="streaming">
+<h2>📺 OFFICIËLE STREAMINGWERELD</h2>
+<div class="sub">Officiële animekanalen en kijkmogelijkheden.</div>
+<div class="notice" style="margin:17px 0">
+Gratis beschikbaarheid en regiorechten verschillen per titel. Een officieel kanaal betekent niet dat iedere aflevering gratis of in Nederland beschikbaar is.
+</div>
+<div class="services">
+<div class="service">
+<h3>Anime! on TMS</h3>
+<p>Officiële animevideo's en geselecteerde volledige afleveringen.</p>
+<a href="https://www.youtube.com/@animeontmsofficialchannel" target="_blank" rel="noopener">BEKIJK KANAAL ↗</a>
+</div>
+<div class="service">
+<h3>GUNDAM.INFO</h3>
+<p>Officiële Gundam-anime en geselecteerde gratis content.</p>
+<a href="https://www.gundam.info/" target="_blank" rel="noopener">BEKIJK WEBSITE ↗</a>
+</div>
+<div class="service">
+<h3>Toei Animation</h3>
+<p>Officieel kanaal van de Japanse animatiestudio.</p>
+<a href="https://www.youtube.com/@ToeiAnimationOfficial" target="_blank" rel="noopener">BEKIJK KANAAL ↗</a>
+</div>
+<div class="service">
+<h3>Muse Asia</h3>
+<p>Gratis officiële animevideo's. Veel content is regiogebonden.</p>
+<a href="https://www.youtube.com/@MuseAsia" target="_blank" rel="noopener">BEKIJK KANAAL ↗</a>
+</div>
+<div class="service">
+<h3>JustWatch Nederland</h3>
+<p>Zoek waar anime legaal te bekijken is in Nederland. Niet alle opties zijn gratis.</p>
+<a href="https://www.justwatch.com/nl" target="_blank" rel="noopener">ZOEK KIJKOPTIES ↗</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="logo">✦ ANIMEVERSE</div>
+<p>MEGABIEB · YOUR ANIME UNIVERSE</p>
+<p>Een onafhankelijke anime-ontdekwebsite.</p>
+<p>© 2026 ANIMEVERSE</p>
+</footer>
+
+<script>
+let page=1;
+let loading=false;
+let query="";
+let favorites=JSON.parse(localStorage.getItem("av-favorites")||"[]");
+let current=[];
+let lang="nl";
+
+const grid=document.getElementById("grid");
+const status=document.getElementById("status");
+const count=document.getElementById("count");
+const more=document.getElementById("more");
+
+function safe(text){
+return String(text||"").replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+}
+
+function title(a){
+return lang==="nl"?(a.title_english||a.title):(a.title||a.title_english);
+}
+
+function watchLink(a){
+return "https://www.justwatch.com/nl/search?q="+encodeURIComponent(title(a));
+}
+
+function card(a){
+let id=a.mal_id;
+let saved=favorites.includes(id);
+let image=a.images?.jpg?.large_image_url||a.images?.jpg?.image_url||"";
+let genres=(a.genres||[]).map(g=>g.name).join(", ");
+let rating=a.rating||"Leeftijd controleren";
+let name=title(a);
+let synopsis=a.synopsis||"Geen beschrijving beschikbaar.";
+return `
+<article class="card">
+<div class="poster">
+${image?`<img src="${safe(image)}" loading="lazy" alt="${safe(name)}">`:`<div class="missing">${safe(name)}</div>`}
+</div>
+<div class="info">
+<h3>${safe(name)}</h3>
+<p>${safe(a.type||"Anime")} · ${safe(a.year||"Onbekend")}<br>${safe(genres||"Anime")}<br>${safe(rating)}</p>
+<p>${safe(synopsis.slice(0,110))}${synopsis.length>110?"...":""}</p>
+<div class="card-actions">
+<a href="${safe(a.url)}" target="_blank" rel="noopener">INFO ↗</a>
+<a class="watch" href="${safe(watchLink(a))}" target="_blank" rel="noopener">KIJKOPTIES ↗</a>
+<button onclick="toggleFav(${id})">${saved?"♥ BEWAARD":"♡ FAVORIET"}</button>
+</div>
+</div>
+</article>`;
+}
+
+function renderFavorites(){
+let selected=current.filter(a=>favorites.includes(a.mal_id));
+document.getElementById("favgrid").innerHTML=
+selected.length?selected.map(card).join():
+'<p class="status">Nog geen favorieten in deze geladen catalogus. Bewaar een anime om hem hier te zien.</p>';
+}
+
+function toggleFav(id){
+if(favorites.includes(id)){
+favorites=favorites.filter(x=>x!==id);
+}else{
+favorites.push(id);
+}
+localStorage.setItem("av-favorites",JSON.stringify(favorites));
+render();
+}
+
+function render(){
+grid.innerHTML=current.map(card).join("");
+count.textContent=current.length+" anime geladen · meer beschikbaar";
+renderFavorites();
+}
+
+async function loadAnime(reset=false){
+if(loading)return;
+loading=true;
+more.disabled=true;
+more.textContent="LADEN...";
+status.textContent="Animegegevens ophalen...";
+if(reset){
+page=1;
+current=[];
+grid.innerHTML="";
+}
+let type=document.getElementById("type").value;
+let order=document.getElementById("order").value;
+let url=new URL("https://api.jikan.moe/v4/anime");
+url.searchParams.set("page",page);
+url.searchParams.set("limit",24);
+url.searchParams.set("sfw","true");
+url.searchParams.set("order_by",order);
+url.searchParams.set("sort","desc");
+if(type)url.searchParams.set("type",type);
+if(query)url.searchParams.set("q",query);
+
+try{
+let response=await fetch(url);
+if(!response.ok)throw new Error("API tijdelijk niet beschikbaar");
+let result=await response.json();
+let results=result.data||[];
+current=reset?results:[...current,...results];
+render();
+status.textContent=results.length?
+"Pagina "+page+" · "+(result.pagination?.items?.total||"Veel")+" anime beschikbaar":
+"Geen resultaten gevonden.";
+more.style.display=result.pagination?.has_next_page?"inline-block":"none";
+page++;
+}catch(e){
+status.textContent="De animecatalogus kon niet laden. Controleer je internetverbinding en probeer opnieuw.";
+}finally{
+loading=false;
+more.disabled=false;
+more.textContent="MEER ANIME LADEN ↓";
+}
+}
+
+let searchTimer;
+document.getElementById("search").addEventListener("input",e=>{
+clearTimeout(searchTimer);
+searchTimer=setTimeout(()=>{
+query=e.target.value.trim();
+loadAnime(true);
+},650);
+});
+
+document.getElementById("type").addEventListener("change",()=>loadAnime(true));
+document.getElementById("order").addEventListener("change",()=>loadAnime(true));
+more.addEventListener("click",()=>loadAnime());
+
+document.getElementById("lang").onclick=()=>{
+lang=lang==="nl"?"en":"nl";
+document.documentElement.lang=lang;
+document.getElementById("lang").textContent=lang==="nl"?"🇬🇧 EN":"🇳🇱 NL";
+document.querySelectorAll("[data-nl]").forEach(el=>{
+el.textContent=el.dataset[lang];
+});
+render();
+};
+
+loadAnime(true);
+</script>
+</body>
+</html>
